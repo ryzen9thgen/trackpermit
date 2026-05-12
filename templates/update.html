@@ -1,0 +1,110 @@
+<!-- templates/update.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Update Stall Record</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+
+    <h2>Update Stall Record</h2>
+
+    <form method="POST">
+
+        <label>Stall Number</label>
+        <input type="text"
+               name="stall_no"
+               value="{{ stall.stall_no }}"
+               required>
+
+        <label>Permit Number</label>
+        <input type="text"
+               name="permit_no"
+               value="{{ stall.permit_no }}"
+               required>
+
+        <label>Vendor Name</label>
+        <input type="text"
+               name="vendor"
+               value="{{ stall.vendor }}"
+               required>
+
+        <label>Section</label>
+        <input type="text"
+               name="section"
+               value="{{ stall.section }}">
+
+        <label>Date Registered</label>
+        <input type="date"
+               name="date_registered"
+               value="{{ stall.date_registered }}"
+               required>
+
+        <label>Expiry Date</label>
+        <input type="date"
+               name="expiry_date"
+               value="{{ stall.expiry_date }}"
+               required>
+
+        <button type="submit">
+            Save Changes
+        </button>
+
+    </form>
+
+    <p style="text-align:center; margin-top:15px;">
+        <a href="/">Back to Dashboard</a>
+    </p>
+
+</div>
+
+</body>
+</html>
