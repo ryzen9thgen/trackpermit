@@ -11,12 +11,11 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 # FLASK APP CONFIGURATION
 # =========================
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ang-iyong-lihim-na-key' # Palitan mo ito ng kahit anong text
+app.config['SECRET_KEY'] = 'secret_key' 
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manager.login_view = 'login' # Dito itatapon ang user pag hindi pa naka-login
-
+login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id)) # type: ignore
@@ -226,5 +225,5 @@ def delete(id):
 # =========================
 # RUN APP
 # =========================
-if __name__ == '__main__':
-    app.run(debug=True) 
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=False)
